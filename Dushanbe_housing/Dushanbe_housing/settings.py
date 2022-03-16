@@ -84,7 +84,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -125,3 +124,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LEAFLET_CONFIG = {
+    # conf here
+    'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46),
+    'DEFAULT_CENTER': (6.0, 45.0),
+'DEFAULT_ZOOM': 16,
+'MIN_ZOOM': 3,
+'MAX_ZOOM': 18,
+'DEFAULT_PRECISION': 6,
+'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+'TILES': [('Satellite', 'http://server/a/...', {'attribution': '&copy; Big eye', 'maxZoom': 16}),
+          ('Streets', 'http://server/b/...', {'attribution': '&copy; Contributors'})],
+    'OVERLAYS': [('Cadastral', 'http://server/a/{z}/{x}/{y}.png', {'attribution': '&copy; IGN'})],
+}

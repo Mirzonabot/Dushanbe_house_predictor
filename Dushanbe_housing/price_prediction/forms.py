@@ -1,14 +1,15 @@
-# from django import forms
-from django.contrib.gis import forms
+from math import floor
+from django import forms
+
+from leaflet.forms.widgets import LeafletWidget
 
 class NewEntryForm(forms.Form):
-    # ...
-    location_name = forms.CharField(label='Name', max_length=20)
-    location = forms.PointField(widget=forms.OSMWidget(
-                  attrs={
-                         'map_width': 600,
-                         'map_height': 400,
-                         'default_lat': 50.1091,
-                         'default_lon': 8.6819,
-                         'default_zoom': 9
-                        }))
+
+    address = forms.CharField(max_length=50)
+    floor = forms.IntegerField(max_value=20)
+    rooms = forms.IntegerField(max_value=20)
+    area_m_sqrd = forms.FloatField(max_value=300)
+
+
+    # m = LeafletWidget()
+    
