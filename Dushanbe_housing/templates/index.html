@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    Welcome!
+    Welcome!<br>
+
+    <form action="" method="">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
 </body>
 </html>
