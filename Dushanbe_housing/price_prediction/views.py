@@ -1,10 +1,10 @@
 from django.shortcuts import render, HttpResponse
-from price_prediction.forms import InputParameters
+from price_prediction.forms import NewEntryForm
 
 # Create your views here.
 
 def index(request):
-    form = InputParameters()
+    form = NewEntryForm()
 
     context = {
         'form':form

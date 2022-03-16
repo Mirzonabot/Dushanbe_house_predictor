@@ -1,7 +1,8 @@
 # from django import forms
 from django.contrib.gis import forms
 
-class InputParameters(forms.Form):
+class NewEntryForm(forms.Form):
+    # ...
     location_name = forms.CharField(label='Name', max_length=20)
     location = forms.PointField(widget=forms.OSMWidget(
                   attrs={
